@@ -1,0 +1,5 @@
+<h2>Error</h2>
+<% @error_message.each do |message| %>
+  <p><%= message %></p>
+  <a href='/events/new'>try again</a>
+<% end %>
