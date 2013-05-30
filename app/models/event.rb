@@ -5,12 +5,10 @@ class Event < ActiveRecord::Base
   validates :organizer_name, :presence => { :message => "you must enter in an organizer name" }
   validates :organizer_email, :presence => { :message => "you must enter in an organizer email" }
   validates_format_of :organizer_email, :with => /\w+@\w+.\w{2,}/
-  # validate :proper_date
+  validate :proper_date
   
-
-
-  # def proper_date
-  #   self.date > Time.now
-  # end
+  def proper_date
+    self.date > Time.now
+  end
 
 end
